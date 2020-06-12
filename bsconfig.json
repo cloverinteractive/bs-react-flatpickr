@@ -1,0 +1,35 @@
+{
+  "name": "bs-react-flatpicker",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "dir" : "src",
+      "subdirs" : true
+    },
+    {
+      "dir": "__stories__",
+      "subdirs": true,
+      "type": "dev"
+    }
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react"
+  ],
+  "bs-dev-dependencies": [
+    "bs-storybook",
+    "bs-date-fns"
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "refmt": 3,
+  "reason": {
+    "react-jsx": 3
+  },
+  "namespace": true
+}
