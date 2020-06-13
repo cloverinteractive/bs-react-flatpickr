@@ -1,6 +1,6 @@
 {
-  "name": "bs-react-flatpicker",
-  "version": "0.1.0",
+  "name": "bs-react-flatpickr",
+  "version": "0.1.1",
   "sources": [
     {
       "dir" : "src",

@@ -18,6 +18,8 @@ npm install --save bs-react-flatpickr # install with npm
 yarn add bs-react-flatpickr # install with yarn
 ```
 
+Add `bs-react-flatpickr` to your `bsconfig.json`.
+
 ## Usage
 
 Because accepting different types types for a single prop is not type safe these bindings use polymorphic
@@ -63,6 +65,8 @@ all argument are optional and those not set will be set to `flatpickr.js` defaul
 _*Example*_:
 
 ```reason
+open BsReactFlatpicr;
+
 [@react.component]
 let make = () => {
   let today = Js.Date.make();
@@ -122,18 +126,20 @@ we can add it in the future.
 Just import any of the already present `flatpickr.js` themes:
 
 ```reason
-open FlatpickrTypes;
+open BsReactFlatpicr;
 [%bs.raw {| require("flatpickr/dist/flatpickr.css") |}];
 
 [@react.component]
 let make = () => {
   let (date, setDate) = React.useState(_ => `date(Js.Date.make()));
-  <Flatpickr
-    value=date
-    onChange={
-      (value, _) => setDate(_ => Value.classify(value))
-    }
-  />
+  FlatpickrTypes.(
+    <Flatpickr
+      value=date
+      onChange={
+        (value, _) => setDate(_ => Value.classify(value))
+      }
+    />
+  );
 };
 ```
 
