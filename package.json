@@ -15,7 +15,7 @@
   "bugs": "https://github.com/cloverinteractive/bs-react-flatpickr/issues",
   "author": "Enrique Vidal <enrique@cloverinteractive.com>",
   "main": "./src/Flatpickr.re",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
@@ -30,6 +30,7 @@
     "@storybook/addon-notes": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
+    "bs-date-fns": "^0.1.6",
     "bs-platform": "^7.3.2",
     "bs-storybook": "^1.0.0",
     "react-flatpickr": "^3.10.1",
@@ -40,6 +41,6 @@
     "reason-react": "^0.8.0"
   },
   "dependencies": {
-    "bs-date-fns": "^0.1.6"
+    "react-flatpickr": "^3.10.1"
   }
 }

@@ -65,7 +65,7 @@ all argument are optional and those not set will be set to `flatpickr.js` defaul
 _*Example*_:
 
 ```reason
-open BsReactFlatpicr;
+open BsReactFlatpickr;
 
 [@react.component]
 let make = () => {
@@ -126,8 +126,9 @@ we can add it in the future.
 Just import any of the already present `flatpickr.js` themes:
 
 ```reason
-open BsReactFlatpicr;
 [%bs.raw {| require("flatpickr/dist/flatpickr.css") |}];
+
+open BsReactFlatpickr;
 
 [@react.component]
 let make = () => {
