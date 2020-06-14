@@ -1,4 +1,5 @@
 open BsStorybook;
+open ReasonDateFns;
 open Story;
 
 [%bs.raw {| require("flatpickr/dist/flatpickr.css") |}];
@@ -30,8 +31,10 @@ storiesOf("Flatpickr", _module)
         (),
       );
 
-    let maxDate = `date(Js.Date.make() |> DateFns.addDays(daysFromNow));
-    let minDate = `date(Js.Date.make() |> DateFns.subDays(daysAgo));
+    let maxDate =
+      `date(Js.Date.make() |> DateFns.addDays(daysFromNow->int_of_float));
+    let minDate =
+      `date(Js.Date.make() |> DateFns.subDays(daysAgo->int_of_float));
 
     <Flatpickr
       options={FlatpickrOptions.make(~dateFormat, ~maxDate, ~minDate, ())}
