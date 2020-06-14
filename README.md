@@ -11,11 +11,8 @@ ReasonML bindings for [react-flatpickr](https://github.com/haoxins/react-flatpic
 
 ## Installation
 
-This package can be installed with `yarn` or `npm`
-
 ```sh
-npm install --save bs-react-flatpickr # install with npm
-yarn add bs-react-flatpickr # install with yarn
+yarn add bs-react-flatpickr
 ```
 
 Add `bs-react-flatpickr` to your `bsconfig.json`.
@@ -26,6 +23,8 @@ Because accepting different types types for a single prop is not type safe these
 variants instead to represent each one of the possible types:
 
 ```reason
+open BsReactFlatpickr;
+
 [@react.component]
 let make = () =>
   <Flatpickr value=`date(Js.Date.make()) />;
@@ -44,10 +43,10 @@ All props are optional
 This can either be `string`, `array(string)`, `Js.Date.t` or `array(Js.Date.t)` you need to use
 polymorphic variants for these to be typesafe:
 
-- *`str* - When you need values to be a `string`
-- *`strs* - When you need values to be `array(string)`
-- *`date* - When you need Values to be `Js.Date.t`
-- *`dates* - When you need values to be `array(Js.Date.t)`
+- *`str* - When you need values to be a ```string```
+- *`strs* - When you need values to be ```array(string)```
+- *`date* - When you need Values to be ```Js.Date.t```
+- *`dates* - When you need values to be ```array(Js.Date.t)```
 
 You use them by wrapping your value in the right variant like this:
 
@@ -98,7 +97,7 @@ from `Flatpickr`, please refer to the former link for more information.
 
 ## Event handlers
 
-`(Value.t, string) => unit`:
+`(Value.t, string) => unit` every event handler prop has this type.
 
 - `Value.t` - first arugment is an `array(Js.Date.t)` representing selected dates, if
 no dates have been selected array will be empty.
@@ -109,7 +108,7 @@ The following `props` are provided in order to customize the `Flatpickr's functi
 Please refer to the [Events & Hooks section](https://flatpickr.js.org/events/) from `Flatpickr` library.
 
 **Note:** Event handlers for `flatpickr.js` have a third argument which is a `flatpickr` instance we've
-ommitted that since the idea is to handle everything via react, that said if a valid use case for it arises
+ommitted that since the idea is to handle everything via react, that said if a valid usecase for it arises
 we can add it in the future.
 
 - `onChange`
@@ -127,7 +126,13 @@ Just import any of the already present `flatpickr.js` themes:
 
 ```reason
 [%bs.raw {| require("flatpickr/dist/flatpickr.css") |}];
+```
 
+**Note:** Both `FlatpickrTypes.Hooks` and `FlatpickrTypes.Value` have a `classify` function for boxing
+and a `reduce` function for `unboxing`. This is because both the [value](#value) and [options](#options)
+prop can be of more than one type:
+
+```reason
 open BsReactFlatpickr;
 
 [@react.component]
@@ -144,20 +149,14 @@ let make = () => {
 };
 ```
 
-**Note:** Both `FlatpickrTypes.Hooks` and `FlatpickrTypes.Value` have a `classify` function for boxing
-and a `reduce` function for `unboxing` (perhaps we should change these names?). This is because
-`value` can be either of one of 4 types and the `options` object allows you to send one or multiple
-event handlers `Hook.handle` or `array(Hook.handle)`.
-
 # Build
+
 ```
-npm run build # with npm
-yarn build # with yarn
+yarn build
 ```
 
 # Storybook
 
 ```
-npm run storybook # with npm
-yarn storybook # with yarn
+yarn storybook
 ```
