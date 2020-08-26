@@ -22,7 +22,7 @@
   ],
   "bs-dev-dependencies": [
     "bs-storybook",
-    "bs-date-fns"
+    "reason-date-fns"
   ],
   "warnings": {
     "error" : "+101"

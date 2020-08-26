@@ -30,17 +30,18 @@
     "@storybook/addon-notes": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
-    "bs-date-fns": "^0.1.6",
-    "bs-platform": "^7.3.2",
-    "bs-storybook": "^1.0.0",
+    "bs-platform": "^8.2.0",
+    "bs-storybook": "https://github.com/draftbit/bs-storybook.git",
+    "date-fns": "^2.15.0",
     "react-flatpickr": "^3.10.1",
-    "reason-react": "^0.8.0"
+    "reason-react": "^0.9.1"
   },
   "peerDependenciesdependencies": {
     "react-flatpickr": "^3.10.1",
     "reason-react": "^0.8.0"
   },
   "dependencies": {
-    "react-flatpickr": "^3.10.1"
+    "react-flatpickr": "^3.10.6",
+    "reason-date-fns": "^0.11.0"
   }
 }
